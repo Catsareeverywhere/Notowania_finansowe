@@ -6,31 +6,8 @@ Created on Mon Aug 22 18:49:00 2022
 """
 
 ###aktualizacja bazy
-def wyslij_mail():
-    import smtplib 
-    mailfrom = 'Rysiek Kitkowski'
-    mailTO = 'rysiekkitkowski@gmail.com'
-    mailsubject = 'Wykonanie skryptu'
-    message_body = '''
-    Udalo sie wykonac skrypt. Elo
-    '''
-    message = ''' From:{}
-    Subject: {}
-    
-    {}
-    '''.format(mailfrom, mailsubject, message_body)
-    user = "d1837a7b76e5b1"
-    password = "51ac76f89a4159"
-    
-    server = smtplib.SMTP('smtp.mailtrap.io',2525)
-    server.ehlo()
-    server.login(user,password)
-    server.sendmail(user,mailTO,message)
-    server.close()
-    print("Wysłano maila")
-wyslij_mail()    
-    
 
+    
 def uaktualnij_dane(baza):
     import sqlite3
     import pandas as pd 
@@ -78,47 +55,7 @@ def uaktualnij_dane(baza):
  
  
     
-uaktualnij_dane('TEST2')
-def wyslij_mail():
-    import smtplib 
-    mailfrom = 'Rysiek Kitkowski'
-    mailTO = 'rysiekkitkowski@gmail.com'
-    mailsubject = 'Wykonanie skryptu'
-    message_body = '''
-    Udalo sie wykonac skrypt. Elo
-    '''
-    message = ''' From:{}
-    Subject: {}
-    
-    {}
-    '''.format(mailfrom, mailsubject, message_body)
-    user = "d1837a7b76e5b1"
-    password = "51ac76f89a4159"
-    
-    server = smtplib.SMTP('smtp.mailtrap.io',2525)
-    server.ehlo()
-    server.login(user,password)
-    server.sendmail(user,mailTO,message)
-    server.close()
-    print("Wysłano maila")
-wyslij_mail() 
+uaktualnij_dane('TEST')
 
 
-def maile():
-    import smtplib
 
-    sender = "from@example.com"
-    receiver = 'mailtrap@example.com'
-    
-    message = f"""\
-    Subject: Hi Mailtrap
-    To: {receiver}
-    From: {sender}
-    
-    This is a test e-mail message."""
-    
-    with smtplib.SMTP("smtp.mailtrap.io", 2525) as server:
-        server.login("d1837a7b76e5b1", "51ac76f89a4159")
-        server.sendmail(sender, receiver, message)
-    print ('wysłano mail')
-maile()
